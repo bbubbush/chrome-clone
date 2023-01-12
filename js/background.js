@@ -3,9 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('https://api.thecatapi.com/v1/images/search?size=full')
       .then((response) => response.json())
       .then((data) => {
-        const bgImage = document.createElement('img');
-        bgImage.src = data[0].url
-        document.body.appendChild(bgImage);
+        document.body.style.background = `url('${data[0].url}') no-repeat center center`;
+        document.body.style.height = '100%';
+        document.body.style.backgroundSize = 'cover';
       });
   }
   
